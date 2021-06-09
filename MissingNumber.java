@@ -29,9 +29,16 @@
 
 class Solution {
     public int missingNumber(int[] nums) {
-			
-		
-		
+		int num = 0;
+		HashSet<Integer> set = new HashSet<Integer>();
+		for(int i = 0; i < nums.length; i++){
+		   set.add(nums[i]);	
+		}
+		int count = nums.length + 1;
+		for(int i = 0 ; i < count; i++){
+		  if(!set.contains(i)) num = i;	
+		}
+		return num;
 	}
 }	
 	
